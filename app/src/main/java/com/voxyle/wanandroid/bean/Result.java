@@ -1,7 +1,7 @@
 package com.voxyle.wanandroid.bean;
 
 
-public class Response<T> {
+public class Result<T> {
     private String errorMsg;
     private T data;
     private int errorCode;

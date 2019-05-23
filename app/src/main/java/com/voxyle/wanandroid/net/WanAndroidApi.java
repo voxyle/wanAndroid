@@ -8,7 +8,7 @@ import com.voxyle.wanandroid.bean.FriendData;
 import com.voxyle.wanandroid.bean.HotKey;
 import com.voxyle.wanandroid.bean.NaviData;
 import com.voxyle.wanandroid.bean.PrimaryTree;
-import com.voxyle.wanandroid.bean.Response;
+import com.voxyle.wanandroid.bean.Result;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public interface WanAndroidApi {
      * @return
      */
     @GET("/wxarticle/list/{id}/{page}/json")
-    Call<Response<List<ArticleData>>> articleHistory(@Path("id") int id, @Path("page") int page);
+    Call<Result<List<ArticleData>>> articleHistory(@Path("id") int id, @Path("page") int page);
 
     /**
      * 搜索公众号历史
@@ -41,7 +41,7 @@ public interface WanAndroidApi {
      * @return
      */
     @GET("/wxarticle/list/{id}/{page}/json?")
-    Call<Response<List<ArticleData>>> articleSearch(@Path("id") int id, @Path("page") int page, @Query("k") String k);
+    Call<Result<List<ArticleData>>> articleSearch(@Path("id") int id, @Path("page") int page, @Query("k") String k);
 
     /**
      * 置顶文章
@@ -49,7 +49,7 @@ public interface WanAndroidApi {
      * @return
      */
     @GET("/article/top/json")
-    Call<Response<List<ArticleData>>> articleTop();
+    Call<Result<List<ArticleData>>> articleTop();
 
     /**
      * 首页
@@ -58,7 +58,7 @@ public interface WanAndroidApi {
      * @return
      */
     @GET("/article/list/{page}/json")
-    Call<Response<List<ArticleData>>> article(@Path("page") int page);
+    Call<Result<List<ArticleData>>> article(@Path("page") int page);
 
     /**
      * banner
@@ -66,7 +66,7 @@ public interface WanAndroidApi {
      * @return
      */
     @GET("/banner/json")
-    Call<Response<List<BannerData>>> banner();
+    Call<Result<List<BannerData>>> banner();
 
     /**
      * 常用网站
@@ -74,7 +74,7 @@ public interface WanAndroidApi {
      * @return
      */
     @GET("/friend/json")
-    Call<Response<List<FriendData>>> friend();
+    Call<Result<List<FriendData>>> friend();
 
     /**
      * 搜索热词
@@ -82,7 +82,7 @@ public interface WanAndroidApi {
      * @return
      */
     @GET("/hotkey/json")
-    Call<Response<List<HotKey>>> hotkey();
+    Call<Result<List<HotKey>>> hotkey();
 
     /**
      * 体系树
@@ -90,7 +90,7 @@ public interface WanAndroidApi {
      * @return
      */
     @GET("/tree/json")
-    Call<Response<List<PrimaryTree>>> tree();
+    Call<Result<List<PrimaryTree>>> tree();
 
     /**
      * 体系下文章
@@ -100,7 +100,7 @@ public interface WanAndroidApi {
      * @return
      */
     @GET("/article/list/{page}/json?")
-    Call<Response<ArticleData>> articleOfTree(@Query("cid") int cid, @Path("page") int page);
+    Call<Result<ArticleData>> articleOfTree(@Query("cid") int cid, @Path("page") int page);
 
     /**
      * 导航数据
@@ -108,7 +108,7 @@ public interface WanAndroidApi {
      * @return
      */
     @GET("/navi/json")
-    Call<Response<NaviData>> navi();
+    Call<Result<NaviData>> navi();
 
     /**
      * 项目分类
@@ -116,7 +116,7 @@ public interface WanAndroidApi {
      * @return
      */
     @GET("/project/tree/json")
-    Call<Response<ChaptersData>> projectOfTree();
+    Call<Result<ChaptersData>> projectOfTree();
 
     /**
      * 项目列表
@@ -125,7 +125,7 @@ public interface WanAndroidApi {
      * @return
      */
     @GET("/project/list/{page}/json?cid=294")
-    Call<Response<ArticleData>> projectList(@Query("cid") int cid, @Path("page") int page);
+    Call<Result<ArticleData>> projectList(@Query("cid") int cid, @Path("page") int page);
 
     /**
      * 登录
@@ -134,7 +134,7 @@ public interface WanAndroidApi {
      */
     @POST("/user/login")
     @FormUrlEncoded
-    Call<Response> login(@Field("username") String uName, @Field("password") String pWord);
+    Call<Result> login(@Field("username") String uName, @Field("password") String pWord);
 
     /**
      * 注册
@@ -146,7 +146,7 @@ public interface WanAndroidApi {
      */
     @POST("/user/register")
     @FormUrlEncoded
-    Call<Response> register(@Field("username") String uName, @Field("password") String pWord, @Field("repassword") String reWord);
+    Call<Result> register(@Field("username") String uName, @Field("password") String pWord, @Field("repassword") String reWord);
 
     /**
      * 退出
@@ -155,7 +155,7 @@ public interface WanAndroidApi {
      */
     @GET("/user/logout/json")
     @Headers({"max-Age : 0"})
-    Call<Response> logout();
+    Call<Result> logout();
 
     /**
      * 我的收藏
@@ -164,7 +164,7 @@ public interface WanAndroidApi {
      * @return
      */
     @GET("/lg/collect/list/{page}/json")
-    Call<Response<ArticleData>> collectList(@Path("page") int page);
+    Call<Result<ArticleData>> collectList(@Path("page") int page);
 
     /**
      * 收藏站内文章
@@ -173,7 +173,7 @@ public interface WanAndroidApi {
      * @return
      */
     @POST("/lg/collect/{originId}/json")
-    Call<Response> addCollectOfInside(@Path("originId") int originId);
+    Call<Result> addCollectOfInside(@Path("originId") int originId);
 
     /**
      * 收藏站外文章
@@ -185,7 +185,7 @@ public interface WanAndroidApi {
      */
     @POST("/lg/collect/add/json")
     @FormUrlEncoded
-    Call<Response> addCollectOfOuter(@Field("title") String title, @Field("author") String author, @Field("link") String link);
+    Call<Result> addCollectOfOuter(@Field("title") String title, @Field("author") String author, @Field("link") String link);
 
     /**
      * 文章中取消收藏
@@ -194,7 +194,7 @@ public interface WanAndroidApi {
      * @return
      */
     @POST("/lg/uncollect_originId/{id}/json")
-    Call<Response> unCollect(@Path("id") int id);
+    Call<Result> unCollect(@Path("id") int id);
 
     /**
      * 收藏页取消收藏
@@ -203,7 +203,7 @@ public interface WanAndroidApi {
      */
     @POST("/lg/uncollect_originId/{id}/json")
     @FormUrlEncoded
-    Call<Response> unCollect(@Path("id") int id, @Field("originId") int originId);
+    Call<Result> unCollect(@Path("id") int id, @Field("originId") int originId);
 
     /**
      * 收藏的网站列表
@@ -222,7 +222,7 @@ public interface WanAndroidApi {
      */
     @POST("/lg/collect/addtool/json")
     @FormUrlEncoded
-    Call<Response> addCollectOfWeb(@Field("name") String name, @Field("link") String link);
+    Call<Result> addCollectOfWeb(@Field("name") String name, @Field("link") String link);
 
     /**
      * 编辑收藏网站
@@ -234,7 +234,7 @@ public interface WanAndroidApi {
      */
     @POST("/lg/collect/updatetool/json")
     @FormUrlEncoded
-    Call<Response> updateCollectOfWeb(@Field("id") int id, @Field("name") String name, @Field("link") String link);
+    Call<Result> updateCollectOfWeb(@Field("id") int id, @Field("name") String name, @Field("link") String link);
 
     /**
      * 删除收藏网站
@@ -244,7 +244,7 @@ public interface WanAndroidApi {
      */
     @POST("/lg/collect/deletetool/json")
     @FormUrlEncoded
-    Call<Response> deleteCollectOfWeb(@Field("id") int id);
+    Call<Result> deleteCollectOfWeb(@Field("id") int id);
 
     /**
      *
@@ -254,5 +254,5 @@ public interface WanAndroidApi {
      */
     @POST("/article/query/{page}/json")
     @FormUrlEncoded
-    Call<Response<ArticleData>> search(@Path("page") int page, @Field("k") String k);
+    Call<Result<ArticleData>> search(@Path("page") int page, @Field("k") String k);
 }
