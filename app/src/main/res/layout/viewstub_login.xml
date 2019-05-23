@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/center_padding10"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/shape_linear_radius_primary"
+    android:orientation="horizontal">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="@dimen/account_icon"
+        android:layout_height="@dimen/account_icon"
+        app:srcCompat="@drawable/ic_login" />
+
+    <TextView
+        style="@style/account_text"
+        android:text="@string/login"
+        android:textColor="@color/colorE8" />
+</LinearLayout>
