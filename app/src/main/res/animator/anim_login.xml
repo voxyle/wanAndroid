@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="sequentially">
+    <set android:ordering="together">
+        <objectAnimator
+            android:duration="600"
+            android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+            android:propertyName="fillColor"
+            android:valueFrom="#1e88e5"
+            android:valueTo="#64b5f6"
+            android:valueType="colorType" />
+        <objectAnimator
+            android:propertyName="alpha"
+            android:valueType="floatType"
+            android:valueFrom="0.8f"
+            android:valueTo="0.6f"/>
+    </set>
+    <set android:ordering="together">
+        <objectAnimator
+            android:duration="600"
+            android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+            android:propertyName="fillColor"
+            android:valueFrom="#4fc3f7"
+            android:valueTo="#039be5"
+            android:valueType="colorType" />
+        <objectAnimator
+            android:propertyName="alpha"
+            android:valueType="floatType"
+            android:valueFrom="0.8f"
+            android:valueTo="0.6f"/>
+    </set>
+    <set android:ordering="together">
+        <objectAnimator
+            android:duration="600"
+            android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+            android:propertyName="fillColor"
+            android:valueFrom="#8e24aa"
+            android:valueTo="#ba68c8"
+            android:valueType="colorType" />
+        <objectAnimator
+            android:propertyName="alpha"
+            android:valueType="floatType"
+            android:valueFrom="0.8f"
+            android:valueTo="0.6f"/>
+    </set>
+</set>

@@ -39,35 +39,6 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     protected abstract P createPresenter();
     protected abstract int getLayoutId();
     protected abstract void initView();
-    @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void dismissLoading() {
-
-    }
-
-    @Override
-    public void onEmpty(Object obj) {
-
-    }
-
-    @Override
-    public void onError(Object obj, String msg) {
-
-    }
-
-    @Override
-    public void onSuccess(Object obj) {
-
-    }
-
-    @Override
-    public void onFailure(Object obj) {
-
-    }
 
     @Override
     public Context getContext() {

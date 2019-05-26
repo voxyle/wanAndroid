@@ -6,4 +6,6 @@
     <string name="title_find">发现</string>
     <string name="title_my">我的</string>
     <string name="login">登录</string>
+    <string name="login_loading">登录中...</string>
+    <string name="login_time_out">登录超时!</string>
 </resources>

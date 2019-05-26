@@ -7,13 +7,7 @@ public interface IBaseView {
 
     void dismissLoading();
 
-    void onEmpty(Object obj);
-
-    void onError(Object obj, String msg);
-
-    void onSuccess(Object obj);
-
-    void onFailure(Object obj);
+    void onError(String msg);
 
     Context getContext();
 }

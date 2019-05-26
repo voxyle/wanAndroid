@@ -15,10 +15,10 @@ public interface LoginContract {
     }
 
     interface View extends IBaseView {
-
+        void onSuccess(Object obj);
     }
 
     interface presenter {
-        void login(String username,String password);
+        void login(String username, String password);
     }
 }

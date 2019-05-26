@@ -85,6 +85,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear_password"
-        app:srcCompat="@drawable/ic_right"
+        app:srcCompat="@drawable/anim_vector_login"
         tools:ignore="VectorDrawableCompat" />
 </android.support.constraint.ConstraintLayout>
