@@ -14,16 +14,18 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.voxyle.wanandroid.R;
 import com.voxyle.wanandroid.base.commom.BaseActivity;
+import com.voxyle.wanandroid.base.commom.BasePresenterActivity;
 import com.voxyle.wanandroid.ui.login.mvp.LoginContract;
 import com.voxyle.wanandroid.ui.login.mvp.LoginPresenter;
 import com.voxyle.wanandroid.widget.LoginDialog;
 
 import org.w3c.dom.Text;
 
-public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View, View.OnClickListener, TextWatcher {
+public class LoginActivity extends BasePresenterActivity<LoginPresenter> implements LoginContract.View, View.OnClickListener, TextWatcher {
     private EditText mUserName;
     private EditText mPassWord;
     private CheckBox mCheckPassWord;
@@ -37,7 +39,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     }
 
     @Override
-    protected int getLayoutId() {
+    protected int onLayoutId() {
         return R.layout.activity_login;
     }
 
@@ -66,13 +68,14 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void onError(String msg) {
-
+        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG);
     }
 
     @Override
     public void onSuccess(Object obj) {
-
+        //跳转主页
     }
+
     @Override
     public Context getContext() {
         return this;
