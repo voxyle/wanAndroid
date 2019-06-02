@@ -2,6 +2,7 @@ package com.voxyle.wanandroid.base.commom;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -53,7 +54,7 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract void initData();
 
-    protected abstract int onLayoutId();
+    protected abstract @LayoutRes int onLayoutId();
 
     protected abstract void onRefreshableData();
 }
