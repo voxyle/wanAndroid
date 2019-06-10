@@ -9,4 +9,5 @@ public class LoginModel implements LoginContract.Model{
     public void login(String userName, String password, OnResultCallBack<Result> callBack) {
 
     }
+
 }

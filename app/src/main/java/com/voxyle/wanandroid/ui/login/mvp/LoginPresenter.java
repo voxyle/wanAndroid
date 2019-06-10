@@ -1,5 +1,7 @@
 package com.voxyle.wanandroid.ui.login.mvp;
 
+import android.content.Context;
+
 import com.voxyle.wanandroid.R;
 import com.voxyle.wanandroid.base.mvp.BasePresenter;
 import com.voxyle.wanandroid.bean.Result;
@@ -44,4 +46,10 @@ public class LoginPresenter extends BasePresenter<LoginContract.Model, LoginCont
             }
         });
     }
+
+    @Override
+    public Context getContext() {
+        return getmView().getContext();
+    }
+
 }

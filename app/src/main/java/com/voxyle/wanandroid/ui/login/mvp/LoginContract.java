@@ -1,5 +1,7 @@
 package com.voxyle.wanandroid.ui.login.mvp;
 
+import android.content.Context;
+
 import com.voxyle.wanandroid.base.mvp.IBaseModel;
 import com.voxyle.wanandroid.base.mvp.IBaseView;
 import com.voxyle.wanandroid.bean.Result;
@@ -16,9 +18,11 @@ public interface LoginContract {
 
     interface View extends IBaseView {
         void onSuccess(Object obj);
+        Context getContext();
     }
 
     interface presenter {
         void login(String username, String password);
+        Context getContext();
     }
 }

@@ -25,6 +25,13 @@ public class CommomViewHolder extends RecyclerView.ViewHolder {
         return new CommomViewHolder(itemView);
     }
 
+    /**
+     * 通过id获取View
+     *
+     * @param id
+     * @param <T>
+     * @return
+     */
     public <T extends View> T getView(@IdRes int id) {
         T view = (T) views.get(id);
         if (view == null) {
@@ -34,6 +41,11 @@ public class CommomViewHolder extends RecyclerView.ViewHolder {
         return view;
     }
 
+    /**
+     * 获取item
+     *
+     * @return
+     */
     public View getItemView() {
         return itemView;
     }

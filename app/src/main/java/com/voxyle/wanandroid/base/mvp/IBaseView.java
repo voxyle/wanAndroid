@@ -9,5 +9,4 @@ public interface IBaseView {
 
     void onError(String msg);
 
-    Context getContext();
 }

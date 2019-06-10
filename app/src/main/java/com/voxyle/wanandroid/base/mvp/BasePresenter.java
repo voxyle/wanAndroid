@@ -25,9 +25,6 @@ public abstract class BasePresenter<M extends IBaseModel, V extends IBaseView> {
         return mView;
     }
 
-    public Context getContext() {
-        return getmView().getContext();
-    }
 
     public void showLoading() {
         getmView().showLoading();
